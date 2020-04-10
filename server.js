@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+
 
 require('dotenv').config();
 
 const PORT = process.env.PORT || 4000;
-const routes = require('./routes');
-const db  = require('./models');
+// const routes = require('./routes');
+// const db  = require('./models');
 const corsOptions = {
     origin: ['http://localhost:3000'],
     methods: "GET,POST,PUT,DELETE",
@@ -21,6 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+// app.use('/', routes.views);
 // app.use('/api/v1', routes.api);
 app.use(
     session({
