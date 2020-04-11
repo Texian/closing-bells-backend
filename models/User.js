@@ -21,6 +21,7 @@ const UserSchema = new Schema ({
         required: true,
         minlength: 8
     },
+    avatar: String,
     items: []
 })
 
