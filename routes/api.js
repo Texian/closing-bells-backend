@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
-const verifyToken = ('../middleware/verification');
+const verifyToken = require('../middleware/verification');
 
 router.get('/items', verifyToken, ctrl.items.index);
 router.get('items/:id', ctrl.items.show);

@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const register = (req, res) => {
     const newUser = {
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     }
 
@@ -45,8 +46,8 @@ const register = (req, res) => {
 
 const login = (req, res) => {
     const user = {
-        username = req.body.username,
-        password = req.body.password
+        username: req.body.username,
+        password: req.body.password
     }
 
     if (!user.username || !user.password) return res.status(400).send('Fields cannot be blank')

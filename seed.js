@@ -13,7 +13,7 @@ const users = [
         email: 'izzy@newhorizons.gov',
         items: ['Tarantula']
     }
-]
+];
 
 const items = [
     {
@@ -40,7 +40,6 @@ const seedItems = async () => {
         console.log('Deleted previous items');
         let createdItems = await db.Item.create(items);
         console.log(`Created ${createdItems.length} items`);
-        return item._id;
     } catch (err) {
         console.log(`Seed Items error: ${err}`);
         process.exit(1);
@@ -59,7 +58,7 @@ const seedUsers = async () => {
             user.password = hash;
             user = await db.User.create(user);
         }
-        console.log('Seeded users');
+        console.log(`Seeded ${users.length} users`);
         process.exit();
     } catch (err) {
         console.log(`Seed Users error: ${err}`);
