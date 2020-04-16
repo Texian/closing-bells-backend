@@ -22,6 +22,7 @@ const UserSchema = new Schema ({
         minlength: 8
     },
     avatar: String,
+    switchId: String,
     items: []
 })
 
