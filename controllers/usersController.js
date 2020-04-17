@@ -12,7 +12,8 @@ const index = async (req, res) => {
 
 const show = async (req, res) => {
     try {
-        const user = await db.User.findOne({_id: req.params.id});
+        console.log(req.user)
+        const user = await db.User.findOne({_id: req.params.id}); //Include JWTS in place of params
         if (!user) return res.status(404).json({error: 'User not found'});
         return res.json(user);
     } catch (err) {
@@ -50,10 +51,24 @@ const destroy = async (req, res) => {
     }
 }
 
+const profile  = async (req, res) => {
+    try {
+        console.log(req.user);
+        const profile = await db.User.findOne({
+            _id: req.user._id
+        });
+        if (!profile) return res.status(404).json({error: 'User not found'});
+        return res.json(user);
+    } catch (err) {
+        return res.status(500).json(`Profile fetch error: ${err}`);
+    }
+}
+
 module.exports = {
     index,
     show,
     create,
     update,
-    destroy
+    destroy,
+    profile
 }
