@@ -58,7 +58,7 @@ const profile  = async (req, res) => {
             _id: req.user._id
         });
         if (!profile) return res.status(404).json({error: 'User not found'});
-        return res.json(user);
+        return res.json(profile);
     } catch (err) {
         return res.status(500).json(`Profile fetch error: ${err}`);
     }
