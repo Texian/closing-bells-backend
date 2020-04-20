@@ -6,12 +6,14 @@ const users = [
     {
         username: 'Tom',
         email: 'tom@nooks.com',
-        items: ['Peach', 'Seabass']
+        items: ['Peach', 'Seabass'],
+        switchId: "1234-5678-90"
     },
     {
         username: 'Isabelle',
         email: 'izzy@newhorizons.gov',
-        items: ['Tarantula']
+        items: ['Tarantula'],
+        switchId: "0987-6543-21"
     }
 ];
 
